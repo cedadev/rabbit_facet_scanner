@@ -1,0 +1,33 @@
+---
+rabbit_server:
+  name: *
+  user: *
+  password: *
+  vhost: *
+  source_exchange:
+    name: deposit_logs
+    type: fanout
+  dest_exchange:
+    name: opensearch_topic
+    type: topic
+  queues:
+    - name: elasticsearch_update_queue_opensearch_tags
+      kwargs:
+        auto_delete: false
+        routing_key: ''
+    - name: elasticsearch_update_queue_opensearch_tags
+      kwargs:
+        auto_delete: false
+        routing_key: opensearch.tagger.cci
+logging:
+  log-level: info
+moles:
+  moles_obs_map_url: http://api.catalogue.ceda.ac.uk/api/v2/observations.json/?publicationState__in=citable,published,preview,removed
+elasticsearch:
+  es-api-key: *
+files_index:
+  name: opensearch-files
+  calculate-md5: false
+  scan-level: 3
+directory_index:
+  name: ceda-dirs

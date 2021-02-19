@@ -1,0 +1,4 @@
+*venv
+*.pyc
+conf.yml
+*egg-info
