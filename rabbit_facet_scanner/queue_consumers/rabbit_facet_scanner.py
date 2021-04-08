@@ -12,6 +12,7 @@ from rabbit_facet_scanner.handlers.facet_scanner_handler import FacetScannerUpda
 
 from rabbit_indexer.queue_handler import QueueHandler
 from rabbit_indexer.utils.consumer_setup import consumer_setup
+from rabbit_indexer.utils import PathFilter
 
 import logging
 
@@ -23,9 +24,13 @@ class FacetScannerQueueConsumer(QueueHandler):
     RabbitMQ queue consumer to extract facets from the CEDA Archive for faceted search
     """
 
-    def get_handlers(self):
+    HANDLER_CLASS = FacetScannerUpdateHandler
 
-        self.queue_handler = FacetScannerUpdateHandler(conf=self.conf)
+    def __init__(self):
+        super().__init__()
+
+        filter_kwargs = self.conf.get('indexer','path_filter', default={})
+        self.path_filter = PathFilter(**filter_kwargs)
 
     def callback(self, ch, method, properties, body, connection):
         """
@@ -47,8 +52,9 @@ class FacetScannerQueueConsumer(QueueHandler):
             self.acknowledge_message(ch, method.delivery_tag, connection)
             return
 
-        # Filter by path for specific project
-        if not message.filepath.startswith('/neodc/esacci'):
+        # Check if there are any filters
+        allowed = self.path_filter.allow_path(message.filepath)
+        if not allowed:
             self.acknowledge_message(ch, method.delivery_tag, connection)
             return
 
@@ -67,7 +73,7 @@ class FacetScannerQueueConsumer(QueueHandler):
 
 
 def main():
-    consumer_setup(FacetScannerQueueConsumer ,logger)
+    consumer_setup()
 
 
 if __name__ == '__main__':

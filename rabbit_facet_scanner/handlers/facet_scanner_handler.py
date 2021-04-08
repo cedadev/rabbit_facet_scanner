@@ -20,9 +20,17 @@ from ceda_elasticsearch_tools.elasticsearch import CEDAElasticsearchClient
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from rabbit_indexer.queue_handler.queue_handler import IngestMessage
+    from rabbit_indexer.utils.yaml_config import YamlConfig
 
 
 class FacetScannerUpdateHandler(UpdateHandler):
+
+    def __init__(self, conf: 'YamlConfig', **kwargs):
+
+        self.facet_scanner = None
+        self.es = None
+
+        super().__init__(conf, **kwargs)
 
     def setup_extra(self, **kwargs) -> None:
         """
@@ -31,11 +39,11 @@ class FacetScannerUpdateHandler(UpdateHandler):
         :param kwargs:
         """
         # Get the facet scanner class
+        self.logger.info('Loading facet scanner')
         self.facet_scanner = FacetScanner()
 
         # Set up the Elasticsearch connection
         api_key = self.conf.get('elasticsearch', 'es-api-key')
-        self.index = self.conf.get('files_index', 'name')
 
         self.es = CEDAElasticsearchClient(headers={'x-api-key': api_key})
 
@@ -45,7 +53,6 @@ class FacetScannerUpdateHandler(UpdateHandler):
         :param message:
         :return:
         """
-
         if message.action == 'DEPOSIT':
             self._process_deposits(message)
 
@@ -67,9 +74,11 @@ class FacetScannerUpdateHandler(UpdateHandler):
             }
         }
 
+        index = self.conf.get('files_index', 'name')
+
         # Send facets to elasticsearch
         self.es.update(
-            index=self.index,
+            index=index,
             id=PathTools.generate_id(message.filepath),
             body={'doc': project, 'doc_as_upsert': True}
         )

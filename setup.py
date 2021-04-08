@@ -48,13 +48,14 @@ setup(
         ],
     },
     install_requires=[
+        'ceda_elasticsearch_tools',
+        'directory_tree',
+        'rabbit_indexer',
         'requests',
         'pika',
-        'pyyaml',
-        'rabbit_indexer',
-        'ceda_elasticsearch_tools',
         'python-dateutil',
-        'tqdm'
+        'pyyaml',
+        'tqdm',
     ],
 
     # This qualifier can be used to selectively exclude Python versions -
@@ -87,10 +88,5 @@ setup(
         'Topic :: System :: Systems Administration :: Authentication/Directory',
         'Topic :: Software Development :: Libraries :: Python Modules'
     ],
-    zip_safe=False,
-    entry_points={
-        'console_scripts': [
-            'rabbit_facet_indexer = rabbit_facet_scanner.rabbit_facet_scanner:main',
-        ],
-    }
+    zip_safe=False
 )
