@@ -7,7 +7,7 @@ chardet==4.0.0
 git+https://github.com/cedadev/directory-tree#egg=directory-tree
 docopt==0.6.2
 elasticsearch==7.12.0
-git+https://github.com/cedadev/facet-scanner/branches@rsmith/split_json_tagger#egg=facet-scanner
+git+https://github.com/cedadev/facet-scanner@rsmith/split_json_tagger#egg=facet-scanner
 idna==2.10
 isodate==0.6.0
 git+https://github.com/cedadev/json_tagger#egg=json-tagger
