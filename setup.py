@@ -37,7 +37,7 @@ setup(
     description='RabbitMQ consuming programme to process deposit server events and update the ES facets index.',
     author='Richard Smith',
     author_email='richard.d.smith@stfc.ac.uk',
-    url='https://github.com/cedadev//',
+    url='https://github.com/cedadev/rabbit_facet_scanner',
     long_description=_long_description,
     long_description_content_type='text/markdown',
     license='BSD - See rabbit_indexer/LICENSE file for details',
