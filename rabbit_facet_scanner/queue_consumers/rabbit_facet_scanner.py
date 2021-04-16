@@ -26,8 +26,8 @@ class FacetScannerQueueConsumer(QueueHandler):
 
     HANDLER_CLASS = FacetScannerUpdateHandler
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, conf):
+        super().__init__(conf)
 
         filter_kwargs = self.conf.get('indexer','path_filter', default={})
         self.path_filter = PathFilter(**filter_kwargs)
