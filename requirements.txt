@@ -17,7 +17,7 @@ pika==1.2.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
 PyYAML==5.4.1
-git+https://github.com/cedadev/rabbit-index-ingest@0e83f8a#egg=rabbit_indexer
+git+https://github.com/cedadev/rabbit-index-ingest@5354dda#egg=rabbit_indexer
 rdflib==5.0.0
 requests==2.25.1
 six==1.15.0
