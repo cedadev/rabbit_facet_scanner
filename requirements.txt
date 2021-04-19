@@ -1,5 +1,5 @@
 anytree==2.8.0
-git+https://github.com/rsmith013/cci-tagger@rsmith/docker_tagger_refactor#egg=cci-tagger
+git+https://github.com/rsmith013/cci-tagger#egg=cci-tagger
 git+https://github.com/cedadev/ceda-elasticsearch-tools#egg=ceda-elasticsearch-tools
 certifi==2020.12.5
 cftime==1.4.1
@@ -7,7 +7,7 @@ chardet==4.0.0
 git+https://github.com/cedadev/directory-tree#egg=directory-tree
 docopt==0.6.2
 elasticsearch==7.12.0
-git+https://github.com/cedadev/facet-scanner@rsmith/split_json_tagger#egg=facet-scanner
+git+https://github.com/cedadev/facet-scanner#egg=facet-scanner
 idna==2.10
 isodate==0.6.0
 git+https://github.com/cedadev/json_tagger#egg=json-tagger
@@ -17,7 +17,7 @@ pika==1.2.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
 PyYAML==5.4.1
-git+https://github.com/cedadev/rabbit-index-ingest@5354dda#egg=rabbit_indexer
+git+https://github.com/cedadev/rabbit-index-ingest#egg=rabbit_indexer
 rdflib==5.0.0
 requests==2.25.1
 six==1.15.0
