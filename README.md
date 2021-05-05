@@ -14,7 +14,10 @@ Exposed Queue Consumer Classes:
 Configuration is handled using a YAML file. The full configuration options 
 are described in the [rabbit_indexer repo](https://github.com/cedadev/rabbit-index-ingest/blob/master/README.md#rabbit_event_indexer)
 
-The required sections for the dbi indexer are:
+This process also requires an environment variable `JSON_TAGGER_ROOT`. This should be set to
+the `json` directory which contains the tagging json.
+
+The required sections for the facet indexer are:
 - rabbit_server
 - indexer
 - logging
@@ -39,9 +42,12 @@ rabbit_server:
     name: fbi_fanout
     type: fanout
   queues:
-    - name: elasticsearch_update_queue_slow
+    - name: elasticsearch_update_queue_opensearch_tags_test
       kwargs:
         auto_delete: false
+    - name: elasticsearch_update_queue_opensearch_tags_test
+      bind_kwargs:
+        routing_key: opensearch.tagger.cci
 indexer:
   queue_consumer_class: rabbit_facet_indexer.queue_consumers.FacetScannerQueueConsumer
   path_filter:
