@@ -4,7 +4,7 @@ git+https://github.com/cedadev/ceda-elasticsearch-tools#egg=ceda-elasticsearch-t
 certifi==2020.12.5
 cftime==1.4.1
 chardet==4.0.0
-git+https://github.com/cedadev/directory-tree#egg=directory-tree
+ceda-directory-tree==1.0.0
 docopt==0.6.2
 elasticsearch==7.12.0
 git+https://github.com/cedadev/facet-scanner#egg=facet-scanner

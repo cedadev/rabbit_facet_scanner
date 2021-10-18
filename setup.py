@@ -49,7 +49,7 @@ setup(
     },
     install_requires=[
         'ceda_elasticsearch_tools',
-        'directory_tree',
+        'ceda-directory-tree',
         'rabbit_indexer',
         'requests',
         'pika',
