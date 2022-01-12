@@ -53,6 +53,8 @@ class FacetScannerUpdateHandler(UpdateHandler):
         :param message:
         :return:
         """
+        self.logger.info(f'{message.filepath}:{message.action}')
+
         if message.action == 'DEPOSIT':
             self._process_deposits(message)
 
