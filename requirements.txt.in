@@ -15,7 +15,7 @@ idna==2.10
 isodate==0.6.0
 git+https://github.com/cedadev/json_tagger#egg=json-tagger
 netCDF4==1.5.6
-numpy==1.20.2
+numpy>=1.20.2
 pika==1.2.0
 pyparsing==2.4.7
 python-dateutil==2.8.1
