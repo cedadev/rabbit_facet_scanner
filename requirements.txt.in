@@ -1,0 +1,30 @@
+# Run this to compile to requirements.txt
+# uv pip compile --allow-unsafe --no-annotate --output-file=requirements.txt --resolver=backtracking --no-strip-extras requirements.txt.in --python-version=3.11 --python=3.11 --upgrade
+
+anytree==2.8.0
+git+https://github.com/cedadev/cci-tagger@v2.0.1#egg=cci-tagger
+git+https://github.com/cedadev/ceda-elasticsearch-tools#egg=ceda-elasticsearch-tools
+certifi==2020.12.5
+cftime==1.4.1
+chardet==4.0.0
+ceda-directory-tree==1.0.0
+docopt==0.6.2
+elasticsearch==7.12.0
+git+https://github.com/cedadev/facet-scanner#egg=facet-scanner
+idna==2.10
+isodate==0.6.0
+git+https://github.com/cedadev/json_tagger#egg=json-tagger
+netCDF4==1.5.6
+numpy==1.20.2
+pika==1.2.0
+pyparsing==2.4.7
+python-dateutil==2.8.1
+PyYAML>=5.4.1
+git+https://github.com/cedadev/rabbit-index-ingest#egg=rabbit_indexer
+rdflib>=4
+requests==2.25.1
+six==1.15.0
+SPARQLWrapper==1.8.5
+tqdm==4.60.0
+urllib3==1.26.4
+verboselogs==1.7
