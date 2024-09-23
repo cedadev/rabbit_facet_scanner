@@ -20,7 +20,7 @@ pyparsing==2.4.7
 python-dateutil==2.8.1
 pyyaml==6.0.2
 rabbit-indexer @ git+https://github.com/cedadev/rabbit-index-ingest@05cea38db779584d070b7b90088a9f67f8b5d4a5#egg=rabbit_indexer
-rdflib==4.2.2
+rdflib==5.0.0
 requests==2.25.1
 six==1.15.0
 sparqlwrapper==1.8.5
