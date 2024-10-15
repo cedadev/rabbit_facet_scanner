@@ -3,13 +3,13 @@
 anytree==2.8.0
 cci-tagger @ git+https://github.com/cedadev/cci-tagger@d5ccdcf3c5b74b53a4f5c439b16fb1e02eafdea6#egg=cci-tagger
 ceda-directory-tree @ git+https://github.com/cedadev/ceda-directory-tree.git@fb99e6d04ef6f104f29550994e08653da02d98c6
-ceda-elasticsearch-tools @ git+https://github.com/cedadev/ceda-elasticsearch-tools@70afcb041955b24881c0dc5a9c327f89152320f2#egg=ceda-elasticsearch-tools
+ceda-elasticsearch-tools @ git+https://github.com/cedadev/ceda-elasticsearch-tools@d365338d7243d1bff2a1266c2129ce72a79b2af1#egg=ceda-elasticsearch-tools
 certifi==2020.12.5
 cftime==1.4.1
 chardet==4.0.0
 docopt==0.6.2
 elasticsearch==7.12.0
-facet-scanner @ git+https://github.com/cedadev/facet-scanner@b0dcf7fba0f66e8f7d2c61d8ab031d2257a3742e#egg=facet-scanner
+facet-scanner @ git+https://github.com/cedadev/facet-scanner@f9893d1e0e00396d38dc0c253d8fd5ff01413e51#egg=facet-scanner
 idna==2.10
 isodate==0.6.0
 json-tagger @ git+https://github.com/cedadev/json_tagger@bdd9c5ede15213e4f2ea0fcfe6ac553e010aa25f#egg=json-tagger
